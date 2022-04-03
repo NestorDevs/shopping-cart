@@ -46,10 +46,8 @@ class ShopCart extends StatelessWidget {
                   context.read<ProductController>().incrementProduct(product);
                 },
               ),
-              Text(context
-                  .watch<ProductController>()
-                  .basketProducts[product]
-                  .toString()),
+              Text(
+                  "${context.watch<ProductController>().basketProducts[product] ?? 0}"),
               IconButton(
                 icon: const Icon(Icons.remove),
                 onPressed: () {
